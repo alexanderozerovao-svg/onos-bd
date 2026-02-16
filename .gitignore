@@ -3,3 +3,4 @@ data/out/*
 *.xlsx
 *.csv
 .env
+.DS_Store
