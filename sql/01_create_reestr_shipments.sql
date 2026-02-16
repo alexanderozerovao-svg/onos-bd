@@ -48,7 +48,7 @@ create table if not exists onos.reestr_shipments (
   selhoz      text,
   inspec      text,
   tnved       text,
-  mo          integer,
+  mo          text,
   geldorog    text,
   sdelka      text,
   subsidy     text,
