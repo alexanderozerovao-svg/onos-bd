@@ -3,7 +3,7 @@ create schema if not exists onos;
 
 create table if not exists onos.reestr_shipments (
   id          bigserial primary key,
-  src_file    text not null default 'orreestr01-1502.xlsx',
+  src_file    text not null default '',
   loaded_at   timestamptz not null default now(),
 
   kpr         integer,
