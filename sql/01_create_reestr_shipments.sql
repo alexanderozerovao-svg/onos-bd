@@ -1,0 +1,65 @@
+-- Реестр отгрузок (источник: orreestr01-1502.xlsx)
+create schema if not exists onos;
+
+create table if not exists onos.reestr_shipments (
+  id          bigserial primary key,
+  src_file    text not null default 'orreestr01-1502.xlsx',
+  loaded_at   timestamptz not null default now(),
+
+  kpr         integer,
+  npr         text,
+  kpok        integer,
+  npok        text,
+  kgr         integer,
+  ngr         text,
+  nstan       text,
+  rnn         text,
+  osn         text,
+  kolf        numeric(14,3),
+  datgr       date,
+  stgr        integer,
+  ndov        text,
+  fdov        text,
+  nv          bigint,
+  zayavka     integer,
+  sper        numeric(14,2),
+  kplat_gd    integer,
+  gtd         text,
+  s_rnsf      bigint,
+  st_per      integer,
+  obl         text,
+  zayavkan    integer,
+  n_ttn       text,
+  sper_ox     integer,
+  max_gr      numeric(14,3),
+  plat_gd     text,
+  id_sn       bigint,
+  okp         text,
+  gruzot      text,
+  v_otg       text,
+  rast        integer,
+  sobs        text,
+  dogtr       text,
+  otm_p1      text,
+  otm_p2      text,
+  makedate    date,
+  pokupdog    text,
+  n_pasp      text,
+  selhoz      text,
+  inspec      text,
+  tnved       bigint,
+  mo          integer,
+  geldorog    text,
+  sdelka      bigint,
+  subsidy     text,
+  shipm_type  text,
+  kod         integer,
+  podkod      bigint,
+  overpass    text,
+  data_ogo    date
+);
+
+create index if not exists ix_reestr_datgr on onos.reestr_shipments(datgr);
+create index if not exists ix_reestr_kpr   on onos.reestr_shipments(kpr);
+create index if not exists ix_reestr_kgr   on onos.reestr_shipments(kgr);
+create index if not exists ix_reestr_nv    on onos.reestr_shipments(nv);
